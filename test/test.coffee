@@ -99,4 +99,11 @@ describe 'markdown plugin', ->
       result = markdown.expand '-hello world'
       expect(result).to.be '<li>hello world</li>'
 
+    it 'can turn lines into incomplete tasks', ->
+      result = markdown.expand '-[ ] hello world'
+      expect(result).to.be '<li><span class=task line=0>[ ]</span> hello world</li>'
+
+    it 'can turn lines into complete tasks', ->
+      result = markdown.expand '-[x] hello world'
+      expect(result).to.be '<li><span class=task line=0>[x]</span> hello world</li>'
 

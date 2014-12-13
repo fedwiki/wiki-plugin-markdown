@@ -1,3 +1,5 @@
+lineNumber = 0
+
 headers = (line) ->
   line = line.replace /^#+(.*)$/, '<h3>$1</h3>'
 
@@ -12,9 +14,12 @@ emphasis = (line) ->
   line = line.replace /\_(\S)\_/g, '<i>$1</i>'
 
 lists = (line) ->
+  lineNumber++
+  line = line.replace /^ *[*-] *(\[[ x]\])(.*)$/, "<li><span class=task line=#{lineNumber}>$1</span>$2</li>"
   line = line.replace /^ *[*-](.*)$/, '<li>$1</li>'
 
 expand = (text) ->
+  lineNumber = -1
   (emphasis headers lists line for line in text.split /\n/).join "\n"
 
 emit = ($item, item) ->
@@ -24,8 +29,24 @@ emit = ($item, item) ->
     </p>
   """
 
+toggle = (item, lineNumber) ->
+  lines = item.text.split /\n/
+  lines[lineNumber] = lines[lineNumber].replace /\[[ x]\]/, (box) ->
+    if box == '[x]' then '[ ]' else '[x]'
+  item.text = lines.join "\n"
+
 bind = ($item, item) ->
   $item.dblclick -> wiki.textEditor $item, item
+  $item.find('.task').click (e) ->
+    toggle item, $(e.target).attr('line')
+    $item.empty()
+    emit($item, item)
+    bind($item, item)
+    wiki.pageHandler.put $item.parents('.page:first'),
+      type: 'edit',
+      id: item.id,
+      item: item
+
 
 window.plugins.markdown = {emit, bind} if window?
 module.exports = {expand} if module?

@@ -1,37 +1,291 @@
 {
   "title": "About Markdown Plugin",
   "story": [
-  {
-    "type": "paragraph",
-    "id": "81bff44b07f59dae",
-    "text": "Here we describe the purpose of the plugin and include a sample."
-  },
-  {
-    "type": "markdown",
-    "id": "ede686da8937caba",
-    "text": "This is text in the new plugin. You can double-click to edit it too."
-  }
-],
-  "journal": [
-  {
-    "type": "create",
-    "item": {
-      "title": "About Markdown Plugin",
-      "story": [
-  {
-    "type": "paragraph",
-    "id": "81bff44b07f59dae",
-    "text": "Here we describe the purpose of the plugin and include a sample."
-  },
-  {
-    "type": "markdown",
-    "id": "ede686da8937caba",
-    "text": "This is text in the new plugin. You can double-click to edit it too."
-  }
-]
+    {
+      "type": "paragraph",
+      "id": "81bff44b07f59dae",
+      "text": "The Markdown plugin allows you to format text using a paragraph oriented subset of markdown. We add link syntax from Federated Wiki and task lists from GitHub."
     },
-    "date": 1418487756000,
-    "certificate": "from mkplugin.sh"
-  }
-]
+    {
+      "type": "paragraph",
+      "id": "4df72f5befbeec71",
+      "text": "See [https://github.com/fedwiki/wiki-plugin-markdown GitHub] for plugin source."
+    },
+    {
+      "type": "markdown",
+      "id": "bab2b565afa55cdd",
+      "text": "# Features"
+    },
+    {
+      "type": "paragraph",
+      "id": "59422beb7110be50",
+      "text": "Write markdown using these features. See the headings and lists on this page for examples."
+    },
+    {
+      "type": "markdown",
+      "id": "ede686da8937caba",
+      "text": "* headings with # lines\n* lists with * or - lines\n* lists with * [ ] or - [ ] task lines\n* italic with * or _ around words\n* bold with ** or __ around words\n* links with [ ... ] and [ [ ... ] ] like wiki\n"
+    },
+    {
+      "type": "markdown",
+      "id": "a5c2137eaff618a8",
+      "text": "# Task Lists"
+    },
+    {
+      "type": "paragraph",
+      "id": "f40bd08ffc88be60",
+      "text": "Check boxes are a popular feature of GitHub flavored markdown. A single click will edit the item and save the change like any other edit."
+    },
+    {
+      "type": "markdown",
+      "id": "07d659385974ece9",
+      "text": "- [x] Wake up, fall out of bed\n- [x] Drag a comb across my head\n- [ ] Find my coat and grab my hat\n- [ ] Make the bus in seconds flat"
+    }
+  ],
+  "journal": [
+    {
+      "type": "create",
+      "item": {
+        "title": "About Markdown Plugin",
+        "story": [
+          {
+            "type": "paragraph",
+            "id": "81bff44b07f59dae",
+            "text": "Here we describe the purpose of the plugin and include a sample."
+          },
+          {
+            "type": "markdown",
+            "id": "ede686da8937caba",
+            "text": "This is text in the new plugin. You can double-click to edit it too."
+          }
+        ]
+      },
+      "date": 1418487756000,
+      "certificate": "from mkplugin.sh"
+    },
+    {
+      "type": "edit",
+      "id": "81bff44b07f59dae",
+      "item": {
+        "type": "paragraph",
+        "id": "81bff44b07f59dae",
+        "text": "This plugin renders "
+      },
+      "date": 1418510875031
+    },
+    {
+      "type": "edit",
+      "id": "81bff44b07f59dae",
+      "item": {
+        "type": "paragraph",
+        "id": "81bff44b07f59dae",
+        "text": "The Markdown plugin allows you to format text using a paragraph oriented subset of markdown."
+      },
+      "date": 1418511170912
+    },
+    {
+      "item": {
+        "type": "paragraph",
+        "id": "4df72f5befbeec71",
+        "text": ""
+      },
+      "id": "4df72f5befbeec71",
+      "type": "add",
+      "after": "81bff44b07f59dae",
+      "date": 1418511203529
+    },
+    {
+      "type": "edit",
+      "id": "4df72f5befbeec71",
+      "item": {
+        "type": "paragraph",
+        "id": "4df72f5befbeec71",
+        "text": "See [https://github.com/fedwiki/wiki-plugin-markdown GitHub] for plugin source."
+      },
+      "date": 1418511218945
+    },
+    {
+      "type": "edit",
+      "id": "81bff44b07f59dae",
+      "item": {
+        "type": "paragraph",
+        "id": "81bff44b07f59dae",
+        "text": "The Markdown plugin allows you to format text using a paragraph oriented subset of markdown. We add link syntax from Federated Wiki and task lists from GitHub."
+      },
+      "date": 1418511394282
+    },
+    {
+      "type": "edit",
+      "id": "ede686da8937caba",
+      "item": {
+        "type": "markdown",
+        "id": "ede686da8937caba",
+        "text": "* headings with # lines\n* lists with * or - lines\n* lists with * [ ] or - [ ] task lines\n* italic with * or _ around words\n* bold with ** or __ around words\n* links with [ ... ] and [[ ... ]]\n"
+      },
+      "date": 1418511567956
+    },
+    {
+      "item": {
+        "type": "paragraph",
+        "id": "59422beb7110be50",
+        "text": ""
+      },
+      "id": "59422beb7110be50",
+      "type": "add",
+      "after": "4df72f5befbeec71",
+      "date": 1418511581577
+    },
+    {
+      "type": "edit",
+      "id": "59422beb7110be50",
+      "item": {
+        "type": "paragraph",
+        "id": "59422beb7110be50",
+        "text": "We summarize features with this list written itself in markdown."
+      },
+      "date": 1418511621657
+    },
+    {
+      "type": "edit",
+      "id": "59422beb7110be50",
+      "item": {
+        "type": "paragraph",
+        "id": "59422beb7110be50",
+        "text": "Write markdown using these features."
+      },
+      "date": 1418511669557
+    },
+    {
+      "type": "edit",
+      "id": "ede686da8937caba",
+      "item": {
+        "type": "markdown",
+        "id": "ede686da8937caba",
+        "text": "* headings with # lines\n* lists with * or - lines\n* lists with * [ ] or - [ ] task lines\n* italic with * or _ around words\n* bold with ** or __ around words\n* links with [ ... ] and [[ ... ]] like wiki\n"
+      },
+      "date": 1418511682899
+    },
+    {
+      "type": "edit",
+      "id": "ede686da8937caba",
+      "item": {
+        "type": "markdown",
+        "id": "ede686da8937caba",
+        "text": "* headings with # lines\n* lists with * or - lines\n* lists with * [ ] or - [ ] task lines\n* italic with * or _ around words\n* bold with ** or __ around words\n* links with [ ... ] and [ [ ... ] ] like wiki\n"
+      },
+      "date": 1418511706358
+    },
+    {
+      "item": {
+        "type": "factory",
+        "id": "bab2b565afa55cdd"
+      },
+      "id": "bab2b565afa55cdd",
+      "type": "add",
+      "after": "ede686da8937caba",
+      "date": 1418512434690
+    },
+    {
+      "type": "edit",
+      "id": "bab2b565afa55cdd",
+      "item": {
+        "type": "markdown",
+        "id": "bab2b565afa55cdd",
+        "text": "= Features"
+      },
+      "date": 1418512444451
+    },
+    {
+      "type": "edit",
+      "id": "bab2b565afa55cdd",
+      "item": {
+        "type": "markdown",
+        "id": "bab2b565afa55cdd",
+        "text": "# Features"
+      },
+      "date": 1418512453309
+    },
+    {
+      "type": "move",
+      "order": [
+        "81bff44b07f59dae",
+        "4df72f5befbeec71",
+        "bab2b565afa55cdd",
+        "59422beb7110be50",
+        "ede686da8937caba"
+      ],
+      "id": "bab2b565afa55cdd",
+      "date": 1418512456858
+    },
+    {
+      "item": {
+        "type": "factory",
+        "id": "a5c2137eaff618a8"
+      },
+      "id": "a5c2137eaff618a8",
+      "type": "add",
+      "after": "ede686da8937caba",
+      "date": 1418512463466
+    },
+    {
+      "type": "edit",
+      "id": "a5c2137eaff618a8",
+      "item": {
+        "type": "markdown",
+        "id": "a5c2137eaff618a8",
+        "text": "# Task Lists"
+      },
+      "date": 1418512475897
+    },
+    {
+      "item": {
+        "type": "factory",
+        "id": "f40bd08ffc88be60"
+      },
+      "id": "f40bd08ffc88be60",
+      "type": "add",
+      "after": "a5c2137eaff618a8",
+      "date": 1418512494984
+    },
+    {
+      "type": "edit",
+      "id": "f40bd08ffc88be60",
+      "item": {
+        "type": "paragraph",
+        "id": "f40bd08ffc88be60",
+        "text": "Check boxes are a popular feature of GitHub flavored markdown. A single click will edit the item and save the change like any other edit."
+      },
+      "date": 1418512655146
+    },
+    {
+      "item": {
+        "type": "factory",
+        "id": "07d659385974ece9"
+      },
+      "id": "07d659385974ece9",
+      "type": "add",
+      "after": "f40bd08ffc88be60",
+      "date": 1418512692418
+    },
+    {
+      "type": "edit",
+      "id": "07d659385974ece9",
+      "item": {
+        "type": "markdown",
+        "id": "07d659385974ece9",
+        "text": "- [x] Wake up, fall out of bed\n- [x] Drag a comb across my head\n- [ ] Find my coat and grab my hat\n- [ ] Make the bus in seconds flat"
+      },
+      "date": 1418512696729
+    },
+    {
+      "type": "edit",
+      "id": "59422beb7110be50",
+      "item": {
+        "type": "paragraph",
+        "id": "59422beb7110be50",
+        "text": "Write markdown using these features. See the headings and lists on this page for examples."
+      },
+      "date": 1418512771195
+    }
+  ]
 }
