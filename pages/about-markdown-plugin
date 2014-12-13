@@ -1,0 +1,37 @@
+{
+  "title": "About Markdown Plugin",
+  "story": [
+  {
+    "type": "paragraph",
+    "id": "81bff44b07f59dae",
+    "text": "Here we describe the purpose of the plugin and include a sample."
+  },
+  {
+    "type": "markdown",
+    "id": "ede686da8937caba",
+    "text": "This is text in the new plugin. You can double-click to edit it too."
+  }
+],
+  "journal": [
+  {
+    "type": "create",
+    "item": {
+      "title": "About Markdown Plugin",
+      "story": [
+  {
+    "type": "paragraph",
+    "id": "81bff44b07f59dae",
+    "text": "Here we describe the purpose of the plugin and include a sample."
+  },
+  {
+    "type": "markdown",
+    "id": "ede686da8937caba",
+    "text": "This is text in the new plugin. You can double-click to edit it too."
+  }
+]
+    },
+    "date": 1418487756000,
+    "certificate": "from mkplugin.sh"
+  }
+]
+}
