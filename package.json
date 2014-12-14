@@ -9,9 +9,9 @@
     "plugin"
   ],
   "author": {
-    "name": "Your Name",
-    "email": "you@example.com",
-    "url": "http://example.com"
+    "name": "Ward Cunningham",
+    "email": "ward@c2.com",
+    "url": "http://ward.fed.wiki.org"
   },
   "contributors": [],
   "scripts": {
@@ -37,4 +37,3 @@
     "node": "0.10"
   }
 }
-
