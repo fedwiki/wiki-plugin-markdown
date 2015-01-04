@@ -18,14 +18,20 @@ lists = (line) ->
   line = line.replace /^ *[*-] *(\[[ x]\])(.*)$/, "<li><span class=task line=#{lineNumber}>$1</span>$2</li>"
   line = line.replace /^ *[*-](.*)$/, '<li>$1</li>'
 
+escape = (line) ->
+  line
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+
 expand = (text) ->
   lineNumber = -1
-  (emphasis headers lists line for line in text.split /\n/).join "\n"
+  (emphasis headers lists escape line for line in text.split /\n/).join "\n"
 
 emit = ($item, item) ->
   $item.append """
     <p>
-      #{expand wiki.resolveLinks item.text}
+      #{wiki.resolveLinks item.text, expand}
     </p>
   """
 
