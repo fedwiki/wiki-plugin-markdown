@@ -1,3 +1,10 @@
+###
+ * Federated Wiki : Markdown Plugin
+ *
+ * Licensed under the MIT license.
+ * https://github.com/fedwiki/wiki-plugin-markdown/blob/master/LICENSE.txt
+###
+
 lineNumber = 0
 
 headers = (line) ->
