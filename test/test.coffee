@@ -107,3 +107,16 @@ describe 'markdown plugin', ->
       result = markdown.expand '-[x] hello world'
       expect(result).to.be '<li><span class=task line=0>[x]</span> hello world</li>'
 
+  describe 'code blocks', ->
+
+    it 'can turn ` ... ` into code block', ->
+      result = markdown.expand 'hello `world`'
+      expect(result).to.be 'hello <code>world</code>'
+
+    it 'can convert multipe code blocks per line', ->
+      result = markdown.expand '`hello` `world`'
+      expect(result).to.be '<code>hello</code> <code>world</code>'
+
+    it 'ignores last back tick on odd number of back ticks', ->
+      result = markdown.expand '`hello` `world'
+      expect(result).to.be '<code>hello</code> `world'

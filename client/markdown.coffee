@@ -31,9 +31,12 @@ escape = (line) ->
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
 
+code = (line) ->
+  line.replace /`(\S.*?\S)`/g, '<code>$1</code>'
+
 expand = (text) ->
   lineNumber = -1
-  (emphasis headers lists escape line for line in text.split /\n/).join "\n"
+  (emphasis headers lists code escape line for line in text.split /\n/).join "\n"
 
 emit = ($item, item) ->
   $item.append """
