@@ -84,26 +84,41 @@ describe 'markdown plugin', ->
   describe 'unordered lists', ->
 
     it 'can turn * lines into lists', ->
-      result = markdown.expand '*hello world'
+      result = markdown.expand '* hello world'
       expect(result).to.be '<li>hello world</li>'
 
     it 'can tell * lines from italic', ->
-      result = markdown.expand '*hello *world*'
+      result = markdown.expand '* hello *world*'
       expect(result).to.be '<li>hello <i>world</i></li>'
 
     it 'can skip space before * lines', ->
-      result = markdown.expand '  *hello world'
+      result = markdown.expand '  * hello world'
       expect(result).to.be '<li>hello world</li>'
 
     it 'can turn - lines into lists', ->
+      result = markdown.expand '- hello world'
+      expect(result).to.be '<li>hello world</li>'
+
+    it 'must have at least one space after list marker', ->
       result = markdown.expand '-hello world'
+      expect(result).to.be '-hello world'
+
+    it 'can have more than one space after list marker', ->
+      result = markdown.expand '-     hello world'
       expect(result).to.be '<li>hello world</li>'
 
     it 'can turn lines into incomplete tasks', ->
-      result = markdown.expand '-[ ] hello world'
+      result = markdown.expand '- [ ] hello world'
       expect(result).to.be '<li><span class=task line=0>[ ]</span> hello world</li>'
 
     it 'can turn lines into complete tasks', ->
-      result = markdown.expand '-[x] hello world'
+      result = markdown.expand '- [x] hello world'
       expect(result).to.be '<li><span class=task line=0>[x]</span> hello world</li>'
 
+    it 'must have at least one space after list marker and before incomplete tasks', ->
+      result = markdown.expand '-[ ] hello world'
+      expect(result).to.be '-[ ] hello world'
+
+    it 'must have at least one space after list marker and before complete tasks', ->
+      result = markdown.expand '-[x] hello world'
+      expect(result).to.be '-[x] hello world'

@@ -22,8 +22,8 @@ emphasis = (line) ->
 
 lists = (line) ->
   lineNumber++
-  line = line.replace /^ *[*-] *(\[[ x]\])(.*)$/, "<li><span class=task line=#{lineNumber}>$1</span>$2</li>"
-  line = line.replace /^ *[*-](.*)$/, '<li>$1</li>'
+  line = line.replace /^ *[*-] +(\[[ x]\])(.*)$/, "<li><span class=task line=#{lineNumber}>$1</span>$2</li>"
+  line = line.replace /^ *[*-] +(.*)$/, '<li>$1</li>'
 
 escape = (line) ->
   line
