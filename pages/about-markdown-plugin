@@ -24,7 +24,7 @@
     {
       "type": "markdown",
       "id": "ede686da8937caba",
-      "text": "* headings with # lines\n* lists with * or - lines\n* lists with * [ ] or - [ ] task lines\n* italic with * or _ around words\n* bold with ** or __ around words\n* links with [ ... ] and [ [ ... ] ] like wiki\n"
+      "text": "* headings with # lines\n* lists with * or - lines\n* lists with * [ ] or - [ ] task lines\n* italic with * or _ around words\n* bold with ** or __ around words\n* links with [ ... ] and [ [ ... ] ] like wiki\n* code block with ` around words"
     },
     {
       "type": "markdown",
@@ -286,6 +286,16 @@
         "text": "Write markdown using these features. See the headings and lists on this page for examples."
       },
       "date": 1418512771195
+    },
+    {
+      "type": "edit",
+      "id": "ede686da8937caba",
+      "item": {
+        "type": "markdown",
+        "id": "ede686da8937caba",
+        "text": "* headings with # lines\n* lists with * or - lines\n* lists with * [ ] or - [ ] task lines\n* italic with * or _ around words\n* bold with ** or __ around words\n* links with [ ... ] and [ [ ... ] ] like wiki\n* code block with ` around words"
+      },
+      "date": 1432401234501
     }
   ]
 }
