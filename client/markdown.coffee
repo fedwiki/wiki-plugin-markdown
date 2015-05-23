@@ -22,7 +22,9 @@ emphasis = (line) ->
 
 lists = (line) ->
   lineNumber++
-  line = line.replace /^ *[*-] +(\[[ x]\])(.*)$/, "<li><span class=task line=#{lineNumber}>$1</span>$2</li>"
+  line = line.replace /^ *[*-] +(\[[ x]\])(.*)$/, (line, box, content) ->
+    checked = if box == '[x]' then  ' checked' else ''
+    "<li><input type=checkbox data-line=#{lineNumber}#{checked}>#{content}</li>"
   line = line.replace /^ *[*-] +(.*)$/, '<li>$1</li>'
 
 escape = (line) ->
@@ -50,8 +52,8 @@ toggle = (item, lineNumber) ->
 
 bind = ($item, item) ->
   $item.dblclick -> wiki.textEditor $item, item
-  $item.find('.task').click (e) ->
-    toggle item, $(e.target).attr('line')
+  $item.find('[type=checkbox]').change (e) ->
+    toggle item, $(e.target).data('line')
     $item.empty()
     emit($item, item)
     bind($item, item)
