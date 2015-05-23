@@ -32,7 +32,8 @@ escape = (line) ->
     .replace(/>/g, '&gt;')
 
 code = (line) ->
-  line.replace /`(\S.*?\S)`/g, '<code>$1</code>'
+  styles = 'background:rgba(0,0,0,0.04);padding:0.2em 0.4em;border-radius:3px'
+  line.replace /`(\S.*?\S)`/g, "<code style=\"#{styles}\">$1</code>"
 
 expand = (text) ->
   lineNumber = -1

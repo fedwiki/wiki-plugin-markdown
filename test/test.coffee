@@ -111,12 +111,12 @@ describe 'markdown plugin', ->
 
     it 'can turn ` ... ` into code block', ->
       result = markdown.expand 'hello `world`'
-      expect(result).to.be 'hello <code>world</code>'
+      expect(result).to.be 'hello <code style="background:rgba(0,0,0,0.04);padding:0.2em 0.4em;border-radius:3px">world</code>'
 
     it 'can convert multipe code blocks per line', ->
       result = markdown.expand '`hello` `world`'
-      expect(result).to.be '<code>hello</code> <code>world</code>'
+      expect(result).to.be '<code style="background:rgba(0,0,0,0.04);padding:0.2em 0.4em;border-radius:3px">hello</code> <code style="background:rgba(0,0,0,0.04);padding:0.2em 0.4em;border-radius:3px">world</code>'
 
     it 'ignores last back tick on odd number of back ticks', ->
       result = markdown.expand '`hello` `world'
-      expect(result).to.be '<code>hello</code> `world'
+      expect(result).to.be '<code style="background:rgba(0,0,0,0.04);padding:0.2em 0.4em;border-radius:3px">hello</code> `world'
