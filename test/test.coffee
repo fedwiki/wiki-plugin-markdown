@@ -109,11 +109,11 @@ describe 'markdown plugin', ->
 
     it 'can turn lines into incomplete tasks', ->
       result = markdown.expand '- [ ] hello world'
-      expect(result).to.be '<li><span class=task line=0>[ ]</span> hello world</li>'
+      expect(result).to.be '<li><input type=checkbox data-line=0> hello world</li>'
 
     it 'can turn lines into complete tasks', ->
       result = markdown.expand '- [x] hello world'
-      expect(result).to.be '<li><span class=task line=0>[x]</span> hello world</li>'
+      expect(result).to.be '<li><input type=checkbox data-line=0 checked> hello world</li>'
 
     it 'must have at least one space after list marker and before incomplete tasks', ->
       result = markdown.expand '-[ ] hello world'
