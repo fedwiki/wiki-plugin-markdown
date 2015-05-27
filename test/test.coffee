@@ -21,7 +21,7 @@ describe 'markdown plugin', ->
 
     it 'can do ### on many lines', ->
       result = markdown.expand '###one\n###two'
-      expect(result).to.be '<h3>one</h3>\n<h3>two</h3>'
+      expect(result).to.be '<h3>one</h3><h3>two</h3>'
 
   describe 'emphasis', ->
 
@@ -136,3 +136,17 @@ describe 'markdown plugin', ->
     it 'ignores last back tick on odd number of back ticks', ->
       result = markdown.expand '`hello` `world'
       expect(result).to.be '<code style="background:rgba(0,0,0,0.04);padding:0.2em 0.4em;border-radius:3px">hello</code> `world'
+
+  describe 'breaks', ->
+
+    it 'adds a break element at the end of a line', ->
+      result = markdown.expand 'hello\nworld'
+      expect(result).to.be 'hello<br>world'
+
+    it 'adds a break element at the end of lines ending with inline elements', ->
+      result = markdown.expand '__Lorem__\n*ipsum*\ndolor\n`code`\nlast element'
+      expect(result).to.be '<b>Lorem</b><br><i>ipsum</i><br>dolor<br><code style="background:rgba(0,0,0,0.04);padding:0.2em 0.4em;border-radius:3px">code</code><br>last element'
+
+    it "doesn't add a break element after block elements", ->
+      result = markdown.expand '- [x] hello world\n###lorem ipsum'
+      expect(result).to.be '<li><input type=checkbox data-line=0 checked> hello world</li><h3>lorem ipsum</h3>'
