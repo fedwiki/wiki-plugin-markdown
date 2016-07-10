@@ -127,15 +127,15 @@ describe 'markdown plugin', ->
 
     it 'can turn ` ... ` into code block', ->
       result = markdown.expand 'hello `world`'
-      expect(result).to.be 'hello <code style="background:rgba(0,0,0,0.04);padding:0.2em 0.4em;border-radius:3px">world</code>'
+      expect(result).to.be 'hello <code>world</code>'
 
     it 'can convert multipe code blocks per line', ->
       result = markdown.expand '`hello` `world`'
-      expect(result).to.be '<code style="background:rgba(0,0,0,0.04);padding:0.2em 0.4em;border-radius:3px">hello</code> <code style="background:rgba(0,0,0,0.04);padding:0.2em 0.4em;border-radius:3px">world</code>'
+      expect(result).to.be '<code>hello</code> <code>world</code>'
 
     it 'ignores last back tick on odd number of back ticks', ->
       result = markdown.expand '`hello` `world'
-      expect(result).to.be '<code style="background:rgba(0,0,0,0.04);padding:0.2em 0.4em;border-radius:3px">hello</code> `world'
+      expect(result).to.be '<code>hello</code> `world'
 
   describe 'breaks', ->
 
@@ -145,7 +145,7 @@ describe 'markdown plugin', ->
 
     it 'adds a break element at the end of lines ending with inline elements', ->
       result = markdown.expand '__Lorem__\n*ipsum*\ndolor\n`code`\nlast element'
-      expect(result).to.be '<b>Lorem</b><br><i>ipsum</i><br>dolor<br><code style="background:rgba(0,0,0,0.04);padding:0.2em 0.4em;border-radius:3px">code</code><br>last element'
+      expect(result).to.be '<b>Lorem</b><br><i>ipsum</i><br>dolor<br><code>code</code><br>last element'
 
     it "doesn't add a break element after block elements", ->
       result = markdown.expand '- [x] hello world\n###lorem ipsum'
