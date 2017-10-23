@@ -1,27 +1,33 @@
 module.exports = function (grunt) {
-  grunt.loadNpmTasks('grunt-contrib-coffee');
+  grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-mocha-test');
+  grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-git-authors');
 
   grunt.initConfig({
-    coffee: {
-      client: {
-        expand: true,
+    clean: ['client/markdown.js', 'client/markdown.js.map', 'test/test.js', 'test/test.js.map'],
+
+    browserify: {
+      plugin: {
+        src: ['client/markdown.coffee'],
+        dest: 'client/markdown.js',
         options: {
-          sourceMap: true
-        },
-        src: ['client/*.coffee', 'test/*.coffee'],
-        ext: '.js'
+          transform: ['coffeeify'],
+          browserifyOptions: {
+            extensions: ".coffee"
+          }
+        }
       }
     },
 
     mochaTest: {
       test: {
         options: {
-          reporter: 'spec'
+          reporter: 'spec',
+          require: 'coffeescript/register'
         },
-        src: ['test/**/*.js']
+        src: ['test/test.coffee']
       }
     },
 
@@ -29,12 +35,12 @@ module.exports = function (grunt) {
     watch: {
       all: {
         files: ['client/*.coffee', 'test/*.coffee'],
-        tasks: ['coffee','mochaTest']
+        tasks: ['build']
       }
     }
   });
 
-  grunt.registerTask('build', ['coffee', 'mochaTest']);
+  grunt.registerTask('build', ['clean', 'mochaTest', 'browserify']);
   grunt.registerTask('default', ['build']);
 
 };
