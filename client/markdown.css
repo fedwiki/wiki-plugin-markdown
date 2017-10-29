@@ -1,15 +1,30 @@
 
-.markdown ul,ol {
-  border-left: 0;
+.markdown ul, .markdown ol {
   padding-left: 0;
+  margin-left: -0.5em;
+}
+
+.markdown > ul, .markdown > ol {
+  padding-left: 1em;
+  margin-left: 0
+}
+
+.markdown li {
+  padding-left: 0.5em;
 }
 
 .markdown blockquote ul, .markdown blockquote ol {
-  margin-left: 1em;
+  padding-left: 0;
+  margin-left: -0.5em;
 }
 
-.markdown blockquote li>ul, .markdown blockquote li>ol {
+.markdown blockquote > ul, .markdown blockquote > ol {
+  padding-left: 1em;
   margin-left: 0;
+}
+
+.markdown blockquote li {
+  padding-left: 0.5em;
 }
 
 ul.task-list {
@@ -17,5 +32,6 @@ ul.task-list {
 }
 
 li.task-list-item input {
-  margin-left: -1.5em;
+  margin-left: -2.2em;
+  margin-right: 1em;
 }
