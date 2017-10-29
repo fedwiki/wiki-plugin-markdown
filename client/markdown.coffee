@@ -5,70 +5,58 @@
  * https://github.com/fedwiki/wiki-plugin-markdown/blob/master/LICENSE.txt
 ###
 
-lineNumber = 0
-totalLines = 0
+marked = require 'marked3'
 
-headers = (line) ->
-  line = line.replace /^#+(.*)$/, '<h3>$1</h3>'
+dataLine = 0
 
-emphasis = (line) ->
-  line = line.replace /\*\*(\S.*?\S)\*\*/g, '<b>$1</b>'
-  line = line.replace /\_\_(\S.*?\S)\_\_/g, '<b>$1</b>'
-  line = line.replace /\*(\S.*?\S)\*/g, '<i>$1</i>'
-  line = line.replace /\_(\S.*?\S)\_/g, '<i>$1</i>'
-  line = line.replace /\*\*(\S)\*\*/g, '<b>$1</b>'
-  line = line.replace /\_\_(\S)\_\_/g, '<b>$1</b>'
-  line = line.replace /\*(\S)\*/g, '<i>$1</i>'
-  line = line.replace /\_(\S)\_/g, '<i>$1</i>'
+renderer = new (marked.Renderer)()
 
-lists = (line) ->
-  line = line.replace /^ *[*-] +(\[[ x]\])(.*)$/, (line, box, content) ->
-    checked = if box == '[x]' then  ' checked' else ''
-    "<li><input type=checkbox data-line=#{lineNumber}#{checked}>#{content}</li>"
-  line = line.replace /^ *[*-] +(.*)$/, '<li>$1</li>'
+# wiki headings are always h3
+renderer.heading = (text, level) ->
+  # all sub headings will be level 3
+  '<h3>' + text + '</h3>'
 
-escape = (line) ->
-  line
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
+# modify listitem renderer, so we can know which checkbox has been clicked
+renderer.listitem = (text, checked) ->
+  if checked == undefined
+    return "<li>#{text}</li>\n"
 
-code = (line) ->
-  line.replace /`(\S.*?\S)`/g, "<code>$1</code>"
+  dataLine++
+  return """<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" data-line=#{dataLine}#{if checked then ' checked' else ''}>#{text}</li>\n"""
 
-breakLine = (line) ->
-  exp = /// (
-    [^>]+            # does not end with a tag
-    | <\/(i|b|code)> # or the tag is an inline tag (<i>, <b> or <code>)
-  ) $ ///
-
-  if lineNumber != totalLines - 1 and exp.test line
-    "#{line}<br>"
-  else
-    line
-
-expand = (text) ->
-  lines = text.split /\n/
-  totalLines = lines.length
-  lineNumber = -1
-
-  output = for line in lines
-    lineNumber++
-    breakLine emphasis headers lists code escape line
-  output.join ""
-
-emit = ($item, item) ->
-  $item.append """
-    <p>
-      #{wiki.resolveLinks item.text, expand}
-    </p>
+# we are opinionated about images - they should make use of the image plugin
+renderer.image = (href, title, text) ->
+  return """
+    ![#{text}](#{href} #{if text then text})
   """
 
-toggle = (item, lineNumber) ->
-  lines = item.text.split /\n/
-  lines[lineNumber] = lines[lineNumber].replace /\[[ x]\]/, (box) ->
-    if box == '[x]' then '[ ]' else '[x]'
-  item.text = lines.join "\n"
+
+markedOptions =
+  gfm: true
+  sanitize: true
+  taskLists: true
+  renderer: renderer
+  linksInNewTab: true
+  breaks: true
+
+expand = (text) ->
+  dataLine = 0
+  marked(text, markedOptions)
+
+emit = ($item, item) ->
+  if (!$("link[href='/plugins/markdown/markdown.css']").length)
+    $('<link rel="stylesheet" href="/plugins/markdown/markdown.css" type="text/css">').appendTo("head")
+
+  $item.append """
+      #{wiki.resolveLinks item.text, expand}
+  """
+
+toggle = (item, taskNumber) ->
+  n = 0
+  item.text = item.text.replace /\[[ x]\]/g, (box, i, original) ->
+    n++
+    if box is '[x]' then newBox = '[ ]' else newBox = '[x]'
+    if n is taskNumber then newBox else box
 
 bind = ($item, item) ->
   $item.dblclick -> wiki.textEditor $item, item

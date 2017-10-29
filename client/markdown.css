@@ -1,0 +1,21 @@
+
+.markdown ul,ol {
+  border-left: 0;
+  padding-left: 0;
+}
+
+.markdown blockquote ul, .markdown blockquote ol {
+  margin-left: 1em;
+}
+
+.markdown blockquote li>ul, .markdown blockquote li>ol {
+  margin-left: 0;
+}
+
+ul.task-list {
+  list-style: none;
+}
+
+li.task-list-item input {
+  margin-left: -1.5em;
+}

@@ -19,27 +19,97 @@
     {
       "type": "paragraph",
       "id": "59422beb7110be50",
-      "text": "Write markdown using these features. See the headings and lists on this page for examples."
+      "text": "This page offers an overview of those markdown features we support, and pointers to those plugins that provide support for those parts we choose not to."
     },
     {
       "type": "markdown",
       "id": "ede686da8937caba",
-      "text": "* headings with # lines\n* lists with * or - lines\n* lists with * [ ] or - [ ] task lines\n* italic with * or _ around words\n* bold with ** or __ around words\n* links with [ ... ] and [ [ ... ] ] like wiki\n* code block with ` around words"
+      "text": "# Paragraphs, Headers, and Blockquotes\n"
     },
     {
       "type": "markdown",
-      "id": "a5c2137eaff618a8",
-      "text": "# Task Lists"
-    },
-    {
-      "type": "paragraph",
-      "id": "f40bd08ffc88be60",
-      "text": "Check boxes are a popular feature of GitHub flavored markdown. A single click will edit the item and save the change like any other edit."
+      "id": "bd647fd7d26dfa2b",
+      "text": "A paragraph is simply one or more consecutive lines of text, separated by one or more blank lines. The markdown plugin will create a new page item when the enter key is pressed twice.\n"
     },
     {
       "type": "markdown",
-      "id": "07d659385974ece9",
-      "text": "- [x] Wake up, fall out of bed\n- [x] Drag a comb across my head\n- [ ] Find my coat and grab my hat\n- [ ] Make the bus in seconds flat"
+      "id": "e3d6aeb740125bd0",
+      "text": "Headings are created by putting a `# ` at the beginning of the line. While ordinarily the number of `#`s indicates the header level, in Federated Wiki all headers within a page are considered to be `<h3>`.\n"
+    },
+    {
+      "type": "markdown",
+      "id": "9323f03f0feacf88",
+      "text": "Blockquotes are indicated using angle brackets, `> `, at the start of the line.\n"
+    },
+    {
+      "type": "markdown",
+      "id": "d1a7b94929db3761",
+      "text": "# Links\n"
+    },
+    {
+      "type": "markdown",
+      "id": "1b7cdca856a5a6ea",
+      "text": "Standard wiki style links are preferred, and should be used."
+    },
+    {
+      "type": "markdown",
+      "id": "114ec55c84f56778",
+      "text": "# Images\n"
+    },
+    {
+      "type": "markdown",
+      "id": "b9d200961be95d4c",
+      "text": "The image plugin should be used for images.\n"
+    },
+    {
+      "type": "markdown",
+      "id": "3728587b55f154f7",
+      "text": "# Code\n"
+    },
+    {
+      "type": "markdown",
+      "id": "51f8a1ee64d9b720",
+      "text": "In regular paragraphs, you can create code span by wrapping text in backtick quotes. However, entire blocks of code are better handled by using the code plugin."
+    },
+    {
+      "type": "markdown",
+      "id": "baa1b1b419ea4e69",
+      "text": "# Emphasis\n"
+    },
+    {
+      "type": "markdown",
+      "id": "516a00bdb68ccb54",
+      "text": "Markdown treats asterisks and underscores as indicators of emphasis. Text wrapped with one \\* or \\_ will be wrapped with an HTML `<em>` tag, typically shown in *italics*; while double \\*'s or \\_'s will be wrapped with HTML `<strong>`, typically shown in **bold**.\n"
+    },
+    {
+      "type": "markdown",
+      "id": "303073e5eb0232b9",
+      "text": "It is possible to prevent \\* or \\_ from being used to indicate emphasis by preceding it with a backslash `\\*` or `\\_`. "
+    },
+    {
+      "type": "markdown",
+      "id": "cb970a70d888fddb",
+      "text": "# Lists\n"
+    },
+    {
+      "type": "markdown",
+      "id": "3a4d0400b6ae7781",
+      "text": "Both of the standard HTML lists are supported, together with task lists from GitHub flavoured markdown. We render list markers in the left margin of the wiki page.\n"
+    },
+    {
+      "type": "markdown",
+      "id": "4e63b10c5737c45e",
+      "text": "* Unordered, bullet, lists use asterisks, pluses or hyphens as list markers.\n"
+    },
+    {
+      "type": "markdown",
+      "id": "2b5caad456993c01",
+      "text": "1. Numbered lists use a number, followed by periods, as list markers. _**N.B.** The numbering is reset for each markdown item._\n\n"
+    },
+    {
+      "type": "markdown",
+      "id": "6c7b2dbf16a5d6ba",
+      "text": "* [x] Task lists are lists with items marked as either `* [ ]` or `* [x]` (incomplete or complete). A single click on the checkbox will edit the item and save the change like any other edit.\n"
     }
   ],
   "journal": [
@@ -296,6 +366,436 @@
         "text": "* headings with # lines\n* lists with * or - lines\n* lists with * [ ] or - [ ] task lines\n* italic with * or _ around words\n* bold with ** or __ around words\n* links with [ ... ] and [ [ ... ] ] like wiki\n* code block with ` around words"
       },
       "date": 1432401234501
+    },
+    {
+      "type": "edit",
+      "id": "59422beb7110be50",
+      "item": {
+        "type": "paragraph",
+        "id": "59422beb7110be50",
+        "text": "This page offers an overview of those markdown features we support, and pointers to those plugins that provide support for those parts we choose not to."
+      },
+      "date": 1509196084232
+    },
+    {
+      "type": "edit",
+      "id": "ede686da8937caba",
+      "item": {
+        "type": "markdown",
+        "id": "ede686da8937caba",
+        "text": "# Paragraphs, Headers, and Blockquotes\n"
+      },
+      "date": 1509196104310
+    },
+    {
+      "type": "add",
+      "id": "bd647fd7d26dfa2b",
+      "item": {
+        "type": "markdown",
+        "id": "bd647fd7d26dfa2b",
+        "text": "A paragraph is simply one or more consecutive lines of text, separated by one or more blank lines. The markdown plugin will create a new page item when the enter key is pressed twice.\n"
+      },
+      "after": "ede686da8937caba",
+      "date": 1509196371502
+    },
+    {
+      "type": "add",
+      "id": "e3d6aeb740125bd0",
+      "item": {
+        "type": "markdown",
+        "id": "e3d6aeb740125bd0",
+        "text": "Headings are created by putting a `# ` at the beginning of the line. While ordinarily the number of `#`s indicates the header level, in Federated Wiki all headers within a page are considered to be `<h3>`. "
+      },
+      "after": "bd647fd7d26dfa2b",
+      "date": 1509196632317
+    },
+    {
+      "type": "edit",
+      "id": "e3d6aeb740125bd0",
+      "item": {
+        "type": "markdown",
+        "id": "e3d6aeb740125bd0",
+        "text": "Headings are created by putting a `# ` at the beginning of the line. While ordinarily the number of `#`s indicates the header level, in Federated Wiki all headers within a page are considered to be `<h3>`.\n"
+      },
+      "date": 1509196644789
+    },
+    {
+      "type": "add",
+      "id": "9323f03f0feacf88",
+      "item": {
+        "type": "markdown",
+        "id": "9323f03f0feacf88",
+        "text": "Blockquotes are indicated using angle brackets, `> `, at the start of the line."
+      },
+      "after": "e3d6aeb740125bd0",
+      "date": 1509196706981
+    },
+    {
+      "type": "edit",
+      "id": "9323f03f0feacf88",
+      "item": {
+        "type": "markdown",
+        "id": "9323f03f0feacf88",
+        "text": "Blockquotes are indicated using angle brackets, `> `, at the start of the line.\n"
+      },
+      "date": 1509196820527
+    },
+    {
+      "type": "add",
+      "id": "cb970a70d888fddb",
+      "item": {
+        "type": "markdown",
+        "id": "cb970a70d888fddb",
+        "text": "# Lists\n"
+      },
+      "after": "9323f03f0feacf88",
+      "date": 1509196827648
+    },
+    {
+      "type": "add",
+      "id": "3a4d0400b6ae7781",
+      "item": {
+        "type": "markdown",
+        "id": "3a4d0400b6ae7781",
+        "text": "Unordered, bullet, lists use asterisks, pluses or hyphens as list markers.\n \nNumbered lists use a number, followed by periods, as list markers.\n  \nThe markers for both types of list will be shown in the left margin.\n"
+      },
+      "after": "cb970a70d888fddb",
+      "date": 1509197075915
+    },
+    {
+      "type": "edit",
+      "id": "3a4d0400b6ae7781",
+      "item": {
+        "type": "markdown",
+        "id": "3a4d0400b6ae7781",
+        "text": "Both of the standard HTML lists are supported, together with task lists from GitHub flavoured markdown.\n \n* Unordered, bullet, lists use asterisks, pluses or hyphens as list markers.\n \n1. Numbered lists use a number, followed by periods, as list markers.\n  \nThe markers for both types of list will be shown in the left margin.\n"
+      },
+      "date": 1509197234376
+    },
+    {
+      "type": "edit",
+      "id": "3a4d0400b6ae7781",
+      "item": {
+        "type": "markdown",
+        "id": "3a4d0400b6ae7781",
+        "text": "Both of the standard HTML lists are supported, together with task lists from GitHub flavoured markdown. We render list markers in the left margin of the wiki page.\n"
+      },
+      "date": 1509197291839
+    },
+    {
+      "type": "add",
+      "id": "4e63b10c5737c45e",
+      "item": {
+        "type": "markdown",
+        "id": "4e63b10c5737c45e",
+        "text": "* Unordered, bullet, lists use asterisks, pluses or hyphens as list markers.\n"
+      },
+      "after": "3a4d0400b6ae7781",
+      "date": 1509197300950
+    },
+    {
+      "type": "add",
+      "id": "2b5caad456993c01",
+      "item": {
+        "type": "markdown",
+        "id": "2b5caad456993c01",
+        "text": "1. Numbered lists use a number, followed by periods, as list markers.\n"
+      },
+      "after": "4e63b10c5737c45e",
+      "date": 1509197317176
+    },
+    {
+      "type": "edit",
+      "id": "2b5caad456993c01",
+      "item": {
+        "type": "markdown",
+        "id": "2b5caad456993c01",
+        "text": "1. Numbered lists use a number, followed by periods, as list markers.\n\n\n"
+      },
+      "date": 1509197350137
+    },
+    {
+      "type": "edit",
+      "id": "2b5caad456993c01",
+      "item": {
+        "type": "markdown",
+        "id": "2b5caad456993c01",
+        "text": "1. Numbered lists use a number, followed by periods, as list markers.\n\n"
+      },
+      "date": 1509197427615
+    },
+    {
+      "type": "edit",
+      "id": "6c7b2dbf16a5d6ba",
+      "item": {
+        "type": "markdown",
+        "id": "6c7b2dbf16a5d6ba",
+        "text": "* [x] Task lists are lists with items marked as either [ ] or [x] (incomplete or complete). A single click on the checkbox will edit the item and save the change like any other edit.\n"
+      },
+      "date": 1509197586935
+    },
+    {
+      "type": "remove",
+      "id": "a5c2137eaff618a8",
+      "date": 1509197597452
+    },
+    {
+      "type": "remove",
+      "id": "f40bd08ffc88be60",
+      "date": 1509197601796
+    },
+    {
+      "type": "remove",
+      "id": "07d659385974ece9",
+      "date": 1509197608291
+    },
+    {
+      "type": "add",
+      "id": "114ec55c84f56778",
+      "item": {
+        "type": "markdown",
+        "id": "114ec55c84f56778",
+        "text": "# Emphasis\n"
+      },
+      "after": "9323f03f0feacf88",
+      "date": 1509197723492
+    },
+    {
+      "type": "add",
+      "id": "516a00bdb68ccb54",
+      "item": {
+        "type": "markdown",
+        "id": "516a00bdb68ccb54",
+        "text": "Markdown treats asterisks and underscores as indicators of emphasis. Text wrapped with one `*` or `_` will be "
+      },
+      "after": "114ec55c84f56778",
+      "date": 1509197815523
+    },
+    {
+      "type": "edit",
+      "id": "516a00bdb68ccb54",
+      "item": {
+        "type": "markdown",
+        "id": "516a00bdb68ccb54",
+        "text": "Markdown treats asterisks and underscores as indicators of emphasis. Text wrapped with one `*` or `_` will be wrapped with "
+      },
+      "date": 1509197875010
+    },
+    {
+      "type": "edit",
+      "id": "516a00bdb68ccb54",
+      "item": {
+        "type": "markdown",
+        "id": "516a00bdb68ccb54",
+        "text": "Markdown treats asterisks and underscores as indicators of emphasis. Text wrapped with one `*` or `_` will be wrapped with an HTML `<em>` tag, typically shown in *italics*; while double *'s or _'s will be wrapped with HTML <strong>, typically shown in **bold**."
+      },
+      "date": 1509197997232
+    },
+    {
+      "type": "edit",
+      "id": "516a00bdb68ccb54",
+      "item": {
+        "type": "markdown",
+        "id": "516a00bdb68ccb54",
+        "text": "Markdown treats asterisks and underscores as indicators of emphasis. Text wrapped with one `*` or `_` will be wrapped with an HTML `<em>` tag, typically shown in *italics*; while double \\*'s or _'s will be wrapped with HTML <strong>, typically shown in **bold**."
+      },
+      "date": 1509198019646
+    },
+    {
+      "type": "edit",
+      "id": "516a00bdb68ccb54",
+      "item": {
+        "type": "markdown",
+        "id": "516a00bdb68ccb54",
+        "text": "Markdown treats asterisks and underscores as indicators of emphasis. Text wrapped with one \\* or \\_ will be wrapped with an HTML `<em>` tag, typically shown in *italics*; while double \\*'s or \\_'s will be wrapped with HTML <strong>, typically shown in **bold**."
+      },
+      "date": 1509198041292
+    },
+    {
+      "type": "edit",
+      "id": "516a00bdb68ccb54",
+      "item": {
+        "type": "markdown",
+        "id": "516a00bdb68ccb54",
+        "text": "Markdown treats asterisks and underscores as indicators of emphasis. Text wrapped with one \\* or \\_ will be wrapped with an HTML `<em>` tag, typically shown in *italics*; while double \\*'s or \\_'s will be wrapped with HTML `<strong>`, typically shown in **bold**."
+      },
+      "date": 1509198052802
+    },
+    {
+      "type": "edit",
+      "id": "516a00bdb68ccb54",
+      "item": {
+        "type": "markdown",
+        "id": "516a00bdb68ccb54",
+        "text": "Markdown treats asterisks and underscores as indicators of emphasis. Text wrapped with one \\* or \\_ will be wrapped with an HTML `<em>` tag, typically shown in *italics*; while double \\*'s or \\_'s will be wrapped with HTML `<strong>`, typically shown in **bold**.\n"
+      },
+      "date": 1509198105501
+    },
+    {
+      "type": "add",
+      "id": "303073e5eb0232b9",
+      "item": {
+        "type": "markdown",
+        "id": "303073e5eb0232b9",
+        "text": "It is possible to prevent * or _ from being used to indicate emphasis by surrounding it with spaces, or when that is not possible by preceding it with a backslash `\\*`."
+      },
+      "after": "516a00bdb68ccb54",
+      "date": 1509198364681
+    },
+    {
+      "type": "edit",
+      "id": "303073e5eb0232b9",
+      "item": {
+        "type": "markdown",
+        "id": "303073e5eb0232b9",
+        "text": "It is possible to prevent \\* or _ from being used to indicate emphasis by surrounding it with spaces, or when that is not possible by preceding it with a backslash `\\*`."
+      },
+      "date": 1509198378062
+    },
+    {
+      "type": "edit",
+      "id": "303073e5eb0232b9",
+      "item": {
+        "type": "markdown",
+        "id": "303073e5eb0232b9",
+        "text": "It is possible to prevent \\* or _ from being used to indicate emphasis by surrounding it with spaces, or when that is not possible by preceding it with a backslash `\\*` or `\\_`."
+      },
+      "date": 1509198414972
+    },
+    {
+      "type": "edit",
+      "id": "303073e5eb0232b9",
+      "item": {
+        "type": "markdown",
+        "id": "303073e5eb0232b9",
+        "text": "It is possible to prevent \\* or \\_ from being used to indicate emphasis by surrounding it with spaces, or when that is not possible by preceding it with a backslash `\\*` or `\\_`."
+      },
+      "date": 1509198429990
+    },
+    {
+      "type": "edit",
+      "id": "303073e5eb0232b9",
+      "item": {
+        "type": "markdown",
+        "id": "303073e5eb0232b9",
+        "text": "It is possible to prevent \\* or \\_ from being used to indicate emphasis by preceding it with a backslash `\\*` or `\\_`. "
+      },
+      "date": 1509198493180
+    },
+    {
+      "type": "add",
+      "id": "d1a7b94929db3761",
+      "item": {
+        "type": "markdown",
+        "id": "d1a7b94929db3761",
+        "text": "# Links\n"
+      },
+      "after": "9323f03f0feacf88",
+      "date": 1509198564471
+    },
+    {
+      "type": "add",
+      "id": "1b7cdca856a5a6ea",
+      "item": {
+        "type": "markdown",
+        "id": "1b7cdca856a5a6ea",
+        "text": "Standard wiki style links are preferred, and should be used."
+      },
+      "after": "d1a7b94929db3761",
+      "date": 1509198708078
+    },
+    {
+      "type": "edit",
+      "id": "114ec55c84f56778",
+      "item": {
+        "type": "markdown",
+        "id": "114ec55c84f56778",
+        "text": "# Images\n"
+      },
+      "date": 1509198834316
+    },
+    {
+      "type": "add",
+      "id": "b9d200961be95d4c",
+      "item": {
+        "type": "markdown",
+        "id": "b9d200961be95d4c",
+        "text": "The images plugin should be used for images.\n"
+      },
+      "after": "114ec55c84f56778",
+      "date": 1509198914081
+    },
+    {
+      "type": "add",
+      "id": "baa1b1b419ea4e69",
+      "item": {
+        "type": "markdown",
+        "id": "baa1b1b419ea4e69",
+        "text": "# Emphasis\n"
+      },
+      "after": "b9d200961be95d4c",
+      "date": 1509198916545
+    },
+    {
+      "type": "edit",
+      "id": "b9d200961be95d4c",
+      "item": {
+        "type": "markdown",
+        "id": "b9d200961be95d4c",
+        "text": "The image plugin should be used for images.\n"
+      },
+      "date": 1509198924065
+    },
+    {
+      "type": "edit",
+      "id": "6c7b2dbf16a5d6ba",
+      "item": {
+        "type": "markdown",
+        "id": "6c7b2dbf16a5d6ba",
+        "text": "* [x] Task lists are lists with items marked as either `* [ ]` or `* [x]` (incomplete or complete). A single click on the checkbox will edit the item and save the change like any other edit.\n"
+      },
+      "date": 1509275902643
+    },
+    {
+      "type": "add",
+      "id": "3728587b55f154f7",
+      "item": {
+        "type": "markdown",
+        "id": "3728587b55f154f7",
+        "text": "# Code\n"
+      },
+      "after": "b9d200961be95d4c",
+      "date": 1509287667001
+    },
+    {
+      "type": "edit",
+      "id": "51f8a1ee64d9b720",
+      "item": {
+        "type": "markdown",
+        "id": "51f8a1ee64d9b720",
+        "text": "While in regular paragraphs, you can create code span by wrapping text in backtick quotes, entire blocks of code are better handled by using the code plugin."
+      },
+      "date": 1509287967417
+    },
+    {
+      "type": "edit",
+      "id": "51f8a1ee64d9b720",
+      "item": {
+        "type": "markdown",
+        "id": "51f8a1ee64d9b720",
+        "text": "In regular paragraphs, you can create code span by wrapping text in backtick quotes. However, entire blocks of code are better handled by using the code plugin."
+      },
+      "date": 1509288332657
+    },
+    {
+      "type": "edit",
+      "id": "2b5caad456993c01",
+      "item": {
+        "type": "markdown",
+        "id": "2b5caad456993c01",
+        "text": "1. Numbered lists use a number, followed by periods, as list markers. _**N.B.** The numbering is reset for each markdown item._\n\n"
+      },
+      "date": 1509288411709
     }
   ]
 }

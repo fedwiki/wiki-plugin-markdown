@@ -13,7 +13,13 @@
     "email": "ward@c2.com",
     "url": "http://ward.fed.wiki.org"
   },
-  "contributors": [],
+  "contributors": [
+    {
+      "name": "Paul Rodwell",
+      "email": "paul.rodwell@btinternet.com",
+      "url": "http://rodwell.me"
+    }
+  ],
   "scripts": {
     "test": "mocha"
   },
