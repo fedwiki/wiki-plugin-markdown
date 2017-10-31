@@ -24,7 +24,6 @@
     "test": "mocha"
   },
   "devDependencies": {
-    "coffee-script": "^1.12.7",
     "coffeeify": "^3.0.0",
     "coffeescript": "^1.12.7",
     "expect.js": "^0.3.1",
