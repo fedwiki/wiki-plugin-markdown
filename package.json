@@ -13,18 +13,29 @@
     "email": "ward@c2.com",
     "url": "http://ward.fed.wiki.org"
   },
-  "contributors": [],
+  "contributors": [
+    {
+      "name": "Paul Rodwell",
+      "email": "paul.rodwell@btinternet.com",
+      "url": "http://rodwell.me"
+    }
+  ],
   "scripts": {
     "test": "mocha"
   },
   "devDependencies": {
-    "expect.js": "*",
+    "coffee-script": "^1.12.7",
+    "coffeeify": "^3.0.0",
+    "coffeescript": "^1.12.7",
+    "expect.js": "^0.3.1",
     "grunt": "^1.0.1",
-    "grunt-contrib-coffee": "^1.0.0",
+    "grunt-browserify": "^5.2.0",
+    "grunt-contrib-clean": "^1.1.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-git-authors": "^3.2.0",
-    "grunt-mocha-test": "~0.12",
-    "mocha": "^2.5.3"
+    "grunt-mocha-test": "^0.13.3",
+    "marked3": "^0.5.1",
+    "mocha": "^4.0.1"
   },
   "license": "MIT",
   "repository": {
