@@ -5,7 +5,7 @@
  * https://github.com/fedwiki/wiki-plugin-markdown/blob/master/LICENSE.txt
 ###
 
-marked = require 'marked3'
+marked = require 'md'
 
 dataLine = 0
 
