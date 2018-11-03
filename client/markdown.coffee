@@ -51,6 +51,18 @@ emit = ($item, item) ->
       #{wiki.resolveLinks item.text, expand}
   """
 
+  if item.graph
+    $item.addClass 'graph-source'
+    $item.get(0).graphData = ->
+      graph = {}
+      title = $item.parents('.page').find('h1').text().trim()
+      graph[title] = links = []
+      for match in item.text.match(/\[\[(.+?)\]\]/g)
+        link = match.slice(2,-2)
+        links.push link
+        graph[link] = []
+      graph
+
 toggle = (item, taskNumber) ->
   n = 0
   item.text = item.text.replace /\[[ x]\]/g, (box, i, original) ->
