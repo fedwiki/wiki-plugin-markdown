@@ -13,7 +13,7 @@ module.exports = function (grunt) {
         src: ['client/markdown.coffee'],
         dest: 'client/markdown.js',
         options: {
-          transform: ['coffeeify'],
+          transform: [[ 'coffeeify', { transpile: { presets: ['@babel/preset-env'] } } ]],
           browserifyOptions: {
             extensions: ".coffee"
           }
