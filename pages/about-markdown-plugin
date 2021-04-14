@@ -47,9 +47,19 @@
       "text": "# Links\n"
     },
     {
-      "type": "markdown",
-      "id": "1b7cdca856a5a6ea",
-      "text": "Standard wiki style links are preferred, and should be used."
+      "type": "html",
+      "id": "63c74600fa219aa4",
+      "text": "Write <b>[ [ Page Titles ] ]</b> inside of double square brackets to make an internal link to a new wiki page. "
+    },
+    {
+      "type": "html",
+      "id": "689302a33cb62a5e",
+      "text": "Write <b>[ http://example.com/webpage.html webpage ]</b> inside single square brackets to make an external link to another web page. Include a second field that specifies how the link is to appear in the rendered text."
+    },
+    {
+      "type": "paragraph",
+      "id": "b377b34feb54f5ed",
+      "text": "By convention external links are represented by single lower-case words that identify what kind of page one will find when clicking the link. "
     },
     {
       "type": "markdown",
@@ -796,6 +806,44 @@
         "text": "1. Numbered lists use a number, followed by periods, as list markers. _**N.B.** The numbering is reset for each markdown item._\n\n"
       },
       "date": 1509288411709
+    },
+    {
+      "id": "63c74600fa219aa4",
+      "type": "add",
+      "item": {
+        "type": "html",
+        "id": "63c74600fa219aa4",
+        "text": "Write <b>[ [ Page Titles ] ]</b> inside of double square brackets to make an internal link to a new wiki page. "
+      },
+      "after": "d1a7b94929db3761",
+      "date": 1618422353887
+    },
+    {
+      "id": "689302a33cb62a5e",
+      "type": "add",
+      "item": {
+        "type": "html",
+        "id": "689302a33cb62a5e",
+        "text": "Write <b>[ http://example.com/webpage.html webpage ]</b> inside single square brackets to make an external link to another web page. Include a second field that specifies how the link is to appear in the rendered text."
+      },
+      "after": "63c74600fa219aa4",
+      "date": 1618422358685
+    },
+    {
+      "id": "b377b34feb54f5ed",
+      "type": "add",
+      "item": {
+        "type": "paragraph",
+        "id": "b377b34feb54f5ed",
+        "text": "By convention external links are represented by single lower-case words that identify what kind of page one will find when clicking the link. "
+      },
+      "after": "689302a33cb62a5e",
+      "date": 1618422365419
+    },
+    {
+      "type": "remove",
+      "id": "1b7cdca856a5a6ea",
+      "date": 1618422381002
     }
   ]
 }
