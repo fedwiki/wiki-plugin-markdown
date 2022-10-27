@@ -71,8 +71,8 @@ toggle = (item, taskNumber) ->
     if n is taskNumber then newBox else box
 
 bind = ($item, item) ->
-  $item.dblclick -> wiki.textEditor $item, item
-  $item.find('[type=checkbox]').change (e) ->
+  $item.on 'dblclick', () -> wiki.textEditor $item, item
+  $item.find('[type=checkbox]').on 'change', (e) ->
     toggle item, $(e.target).data('line')
     $item.empty()
     emit($item, item)
