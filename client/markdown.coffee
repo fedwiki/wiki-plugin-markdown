@@ -5,7 +5,7 @@
  * https://github.com/fedwiki/wiki-plugin-markdown/blob/master/LICENSE.txt
 ###
 
-marked = require 'md'
+marked = require 'marked'
 
 dataLine = 0
 
@@ -17,12 +17,16 @@ renderer.heading = (text, level) ->
   '<h3>' + text + '</h3>'
 
 # modify listitem renderer, so we can know which checkbox has been clicked
-renderer.listitem = (text, checked) ->
-  if checked == undefined
+renderer.listitem = (text, task, checked) ->
+  console.log('listitem', text,task,checked)
+  if task
+    dataLine++
+    text = text.replace(/^.*?> /, '')
+    return """<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" data-line=#{dataLine}#{if checked then ' checked' else ''}>#{text}</li>\n"""
+  else
     return "<li>#{text}</li>\n"
 
-  dataLine++
-  return """<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" data-line=#{dataLine}#{if checked then ' checked' else ''}>#{text}</li>\n"""
+  
 
 # we are opinionated about images - they should make use of the image plugin
 renderer.image = (href, title, text) ->
@@ -33,15 +37,13 @@ renderer.image = (href, title, text) ->
 
 markedOptions =
   gfm: true
-  sanitize: true
-  taskLists: true
   renderer: renderer
   linksInNewTab: true
   breaks: true
 
 expand = (text) ->
   dataLine = 0
-  marked(text, markedOptions)
+  marked.parse(text, markedOptions)
 
 emit = ($item, item) ->
   if (!$("link[href='/plugins/markdown/markdown.css']").length)

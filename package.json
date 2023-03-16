@@ -28,6 +28,7 @@
     "@babel/preset-env": "^7.4.5",
     "coffeeify": "^3.0.1",
     "coffeescript": "^2.4.1",
+    "dompurify": "^3.0.1",
     "expect.js": "^0.3.1",
     "grunt": "^1.0.4",
     "grunt-browserify": "^6.0.0",
@@ -35,7 +36,7 @@
     "grunt-contrib-watch": "^1.1.0",
     "grunt-git-authors": "^3.2.0",
     "grunt-mocha-test": "^0.13.3",
-    "md": "^0.6.0",
+    "marked": "^4.2.12",
     "mocha": "^10.0.0"
   },
   "license": "MIT",

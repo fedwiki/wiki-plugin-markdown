@@ -27,8 +27,8 @@ describe 'markdown plugin', ->
 
     it 'can turn lines into incomplete tasks', ->
       result = markdown.expand '- [ ] hello world'
-      expect(result).to.be '<ul class="task-list">\n<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" data-line=1>hello world</li>\n</ul>\n'
+      expect(result).to.be '<ul>\n<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" data-line=1>hello world</li>\n</ul>\n'
 
     it 'can turn lines into complete tasks', ->
       result = markdown.expand '- [x] hello world'
-      expect(result).to.be '<ul class="task-list">\n<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" data-line=1 checked>hello world</li>\n</ul>\n'
+      expect(result).to.be '<ul>\n<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" data-line=1 checked>hello world</li>\n</ul>\n'

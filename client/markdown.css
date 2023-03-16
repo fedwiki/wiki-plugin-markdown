@@ -27,6 +27,12 @@
   padding-left: 0.5em;
 }
 
+.markdown code {
+  background: rgba(0,0,0,0.04);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+}
+
 ul.task-list {
   list-style: none;
 }
