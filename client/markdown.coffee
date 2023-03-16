@@ -6,6 +6,7 @@
 ###
 
 marked = require 'marked'
+DOMPurify = require 'isomorphic-dompurify'
 
 dataLine = 0
 
@@ -26,8 +27,6 @@ renderer.listitem = (text, task, checked) ->
   else
     return "<li>#{text}</li>\n"
 
-  
-
 # we are opinionated about images - they should make use of the image plugin
 renderer.image = (href, title, text) ->
   return """
@@ -43,7 +42,7 @@ markedOptions =
 
 expand = (text) ->
   dataLine = 0
-  marked.parse(text, markedOptions)
+  DOMPurify.sanitize(marked.parse(text, markedOptions))
 
 emit = ($item, item) ->
   if (!$("link[href='/plugins/markdown/markdown.css']").length)
