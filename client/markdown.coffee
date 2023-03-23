@@ -19,7 +19,6 @@ renderer.heading = (text, level) ->
 
 # modify listitem renderer, so we can know which checkbox has been clicked
 renderer.listitem = (text, task, checked) ->
-  console.log('listitem', text,task,checked)
   if task
     dataLine++
     text = text.replace(/^.*?> /, '')
