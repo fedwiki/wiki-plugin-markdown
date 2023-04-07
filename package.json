@@ -35,7 +35,8 @@
     "grunt-contrib-watch": "^1.1.0",
     "grunt-git-authors": "^3.2.0",
     "grunt-mocha-test": "^0.13.3",
-    "md": "^0.6.0",
+    "isomorphic-dompurify": "^1.2.0",
+    "marked": "^4.2.12",
     "mocha": "^10.0.0"
   },
   "license": "MIT",

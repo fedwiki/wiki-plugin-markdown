@@ -5,7 +5,8 @@
  * https://github.com/fedwiki/wiki-plugin-markdown/blob/master/LICENSE.txt
 ###
 
-marked = require 'md'
+marked = require 'marked'
+DOMPurify = require 'isomorphic-dompurify'
 
 dataLine = 0
 
@@ -17,12 +18,13 @@ renderer.heading = (text, level) ->
   '<h3>' + text + '</h3>'
 
 # modify listitem renderer, so we can know which checkbox has been clicked
-renderer.listitem = (text, checked) ->
-  if checked == undefined
+renderer.listitem = (text, task, checked) ->
+  if task
+    dataLine++
+    text = text.replace(/^.*?> /, '')
+    return """<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" data-line=#{dataLine}#{if checked then ' checked' else ''}>#{text}</li>\n"""
+  else
     return "<li>#{text}</li>\n"
-
-  dataLine++
-  return """<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" data-line=#{dataLine}#{if checked then ' checked' else ''}>#{text}</li>\n"""
 
 # we are opinionated about images - they should make use of the image plugin
 renderer.image = (href, title, text) ->
@@ -33,15 +35,13 @@ renderer.image = (href, title, text) ->
 
 markedOptions =
   gfm: true
-  sanitize: true
-  taskLists: true
   renderer: renderer
   linksInNewTab: true
   breaks: true
 
 expand = (text) ->
   dataLine = 0
-  marked(text, markedOptions)
+  DOMPurify.sanitize(marked.parse(text, markedOptions))
 
 emit = ($item, item) ->
   if (!$("link[href='/plugins/markdown/markdown.css']").length)
@@ -71,8 +71,8 @@ toggle = (item, taskNumber) ->
     if n is taskNumber then newBox else box
 
 bind = ($item, item) ->
-  $item.dblclick -> wiki.textEditor $item, item
-  $item.find('[type=checkbox]').change (e) ->
+  $item.on 'dblclick', () -> wiki.textEditor $item, item
+  $item.find('[type=checkbox]').on 'change', (e) ->
     toggle item, $(e.target).data('line')
     $item.empty()
     emit($item, item)
