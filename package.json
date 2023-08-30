@@ -36,7 +36,7 @@
     "grunt-git-authors": "^3.2.0",
     "grunt-mocha-test": "^0.13.3",
     "isomorphic-dompurify": "^1.2.0",
-    "marked": "^4.2.12",
+    "marked": "^5.1.2",
     "mocha": "^10.0.0"
   },
   "license": "MIT",

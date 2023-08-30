@@ -38,6 +38,8 @@ markedOptions =
   renderer: renderer
   linksInNewTab: true
   breaks: true
+  mangle: false
+  headerIds: false
 
 expand = (text) ->
   dataLine = 0
