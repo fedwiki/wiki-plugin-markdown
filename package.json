@@ -24,8 +24,8 @@
     "test": "mocha"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.5",
-    "@babel/preset-env": "^7.4.5",
+    "@babel/core": "^7.23.2",
+    "@babel/preset-env": "^7.23.2",
     "coffeeify": "^3.0.1",
     "coffeescript": "^2.4.1",
     "expect.js": "^0.3.1",
