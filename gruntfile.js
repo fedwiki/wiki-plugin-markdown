@@ -6,20 +6,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-git-authors');
 
   grunt.initConfig({
-    clean: ['client/markdown.js', 'client/markdown.js.map', 'test/test.js', 'test/test.js.map'],
-
-    browserify: {
-      plugin: {
-        src: ['client/markdown.coffee'],
-        dest: 'client/markdown.js',
-        options: {
-          transform: [[ 'coffeeify', { transpile: { presets: ['@babel/preset-env'] } } ]],
-          browserifyOptions: {
-            extensions: ".coffee"
-          }
-        }
-      }
-    },
+    clean: ['test/test.js', 'test/test.js.map'],
 
     mochaTest: {
       test: {
@@ -40,7 +27,7 @@ module.exports = function (grunt) {
     }
   });
 
-  grunt.registerTask('build', ['clean', 'mochaTest', 'browserify']);
+  grunt.registerTask('build', ['clean', 'mochaTest']);
   grunt.registerTask('default', ['build']);
 
 };
