@@ -1,4 +1,6 @@
-/*/*.js
-/*/*.map
+coverage
 node_modules
 npm-debug.log
+client/markdown.js
+client/markdown.js.map
+meta-client.json
