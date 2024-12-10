@@ -13,13 +13,15 @@ let dataLine = 0
 const renderer = new marked.Renderer()
 
 // wiki headings are always h3
-renderer.heading = ({ text, depth }) => {
+renderer.heading = ({ tokens, depth }) => {
+  const text = renderer.parser.parseInline(tokens)
   // all sub headings will be level 3
   return '<h3>' + text + '</h3>'
 }
 
 // modify listitem renderer, so we can know which checkbox has been clicked
-renderer.listitem = ({ text, task, checked }) => {
+renderer.listitem = ({ tokens, task, checked }) => {
+  let text = renderer.parser.parseInline(tokens)
   if (task) {
     dataLine++
     text = text.replace(/^.*?> /, '')
