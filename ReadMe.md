@@ -5,9 +5,8 @@ This plugin, type: markdown, extends the markup of the federated wiki.
 ## Build
 
     npm install
-    grunt build
+    npm run build
 
 ## License
 
 MIT
-
