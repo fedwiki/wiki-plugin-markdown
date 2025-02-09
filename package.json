@@ -26,12 +26,12 @@
     "update-authors": "node scripts/update-authors.cjs"
   },
   "devDependencies": {
-    "esbuild": "^0.24.0",
+    "esbuild": "^0.25.0",
     "expect.js": "^0.3.1",
     "grunt-git-authors": "^3.2.0",
     "isomorphic-dompurify": "^2.16.0",
-    "marked": "^14.1.3",
-    "mocha": "^10.0.0"
+    "marked": "^15.0.6",
+    "mocha": "^11.1.0"
   },
   "license": "MIT",
   "repository": {
