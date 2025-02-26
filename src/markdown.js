@@ -21,7 +21,7 @@ renderer.heading = ({ tokens, depth }) => {
 
 // modify listitem renderer, so we can know which checkbox has been clicked
 renderer.listitem = ({ tokens, task, checked }) => {
-  let text = renderer.parser.parseInline(tokens)
+  let text = renderer.parser.parse(tokens)
   if (task) {
     dataLine++
     text = text.replace(/^.*?> /, '')
