@@ -1,4 +1,5 @@
 import { markdown } from '../src/markdown.js'
+import { describe, it } from 'node:test'
 import expect from 'expect.js'
 
 // inspired by https://guides.github.com/features/mastering-markdown/

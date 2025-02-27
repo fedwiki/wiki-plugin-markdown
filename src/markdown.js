@@ -20,12 +20,12 @@ renderer.heading = ({ tokens, depth }) => {
 }
 
 // modify listitem renderer, so we can know which checkbox has been clicked
-renderer.listitem = ({ tokens, task, checked }) => {
-  let text = renderer.parser.parse(tokens)
-  if (task) {
+renderer.listitem = item => {
+  let text = renderer.parser.parse(item.tokens, !!item.loose)
+  if (item.task) {
     dataLine++
     text = text.replace(/^.*?> /, '')
-    return `<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" data-line=${dataLine}${checked ? ' checked' : ''}>${text}</li>\n`
+    return `<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" data-line=${dataLine}${item.checked ? ' checked' : ''}>${text}</li>\n`
   } else {
     return `<li>${text}</li>\n`
   }
