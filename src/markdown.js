@@ -7,6 +7,7 @@
 
 import { marked } from 'marked'
 import DOMPurify from 'isomorphic-dompurify'
+import { escape, cleanUrl } from './helpers.js'
 
 let dataLine = 0
 
@@ -17,6 +18,21 @@ renderer.heading = ({ tokens, depth }) => {
   const text = renderer.parser.parseInline(tokens)
   // all sub headings will be level 3
   return '<h3>' + text + '</h3>'
+}
+
+renderer.link = ({ href, title, tokens }) => {
+  const text = renderer.parser.parseInline(tokens)
+  const cleanHref = cleanUrl(href)
+  if (cleanHref === null) {
+    return text
+  }
+  href = cleanHref
+  let out = `<a class="external" target="_blank" href="${href}"`
+  if (title) {
+    out += ` title="${escape(title)}"`
+  }
+  out += ` rel="noopener">${text} <img src="/images/external-link-ltr-icon.png"></a>`
+  return out
 }
 
 // modify listitem renderer, so we can know which checkbox has been clicked
@@ -49,7 +65,7 @@ const markedOptions = {
 
 const expand = text => {
   dataLine = 0
-  return DOMPurify.sanitize(marked.parse(text, markedOptions))
+  return DOMPurify.sanitize(marked.parse(text, markedOptions), { ADD_ATTR: ['target'] })
 }
 
 const emit = ($item, item) => {
