@@ -26,11 +26,11 @@
     "update-authors": "node scripts/update-authors.cjs"
   },
   "devDependencies": {
-    "esbuild": "^0.27.1",
+    "esbuild": "^0.28.0",
     "grunt-git-authors": "^3.2.0",
-    "isomorphic-dompurify": "^2.21.0",
-    "jsdom": "^27.3.0",
-    "marked": "^17.0.1"
+    "isomorphic-dompurify": "^3.12.0",
+    "jsdom": "^29.1.1",
+    "marked": "^18.0.3"
   },
   "license": "MIT",
   "repository": {
